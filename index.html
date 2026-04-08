@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
@@ -27,6 +27,7 @@
       background: var(--white);
       color: var(--text);
       line-height: 1.8;
+      overflow-x: hidden;
     }
 
     /* ===== HEADER ===== */
@@ -48,7 +49,7 @@
     .header-right { display: flex; align-items: center; justify-content: flex-end; gap: 1.5rem; }
 
     .hamburger {
-      display: flex;
+      display: none;
       flex-direction: column;
       justify-content: center;
       gap: 5px;
@@ -666,6 +667,7 @@
     /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
       .header-inner { padding: 0.8rem 1.2rem; }
+      .hamburger { display: flex; }
       .header-nav-link, .btn-line-header { display: none; }
       .sns-side { display: none; }
       section { padding: 5rem 1.5rem; }
@@ -1037,7 +1039,7 @@
     <div class="map-placeholder">
       <div class="map-pin">
         <span>📍</span>
-        Comiha<br>白山市日御子町
+        Luce Privé<br>南青山
       </div>
     </div>
   </div>
@@ -1140,7 +1142,7 @@
       const isToday   = d === today.getDate() && calMonth === today.getMonth() && calYear === today.getFullYear();
       const isSunday  = dow === 0;
       const isHol     = isHoliday(calYear, calMonth, d);
-      const isClosed  = isSunday || isHol;
+      const isClosed  = isSunday || isHol; // 定休日：日曜・祝日
       let cls = '';
       if (dow === 0) cls = 'sunday';
       if (dow === 6) cls = 'saturday';
